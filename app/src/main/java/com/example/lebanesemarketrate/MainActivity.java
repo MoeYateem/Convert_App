@@ -25,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
             BigDecimal usd = new BigDecimal(Double.parseDouble(lbpValue) / 22000);
             conversionTextView.setText(lbpValue + "LBP = " + String.valueOf(usd) + "$");
         }
-
+        else if(lbpEditText.getText().toString().equals("") && usdEditText.getText().toString().equals("")) {
+            Toast.makeText(this, "Please enter a value", Toast.LENGTH_SHORT).show();
+            conversionTextView.setText("");
+        }
         else {
 
             String usdValue = usdEditText.getText().toString();
